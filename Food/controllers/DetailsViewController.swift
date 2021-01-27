@@ -19,6 +19,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var phone: UILabel!
     
     var foodDB: FoodDB?
+    var apiKey = ""
     
     weak var delegate:DetailsViewControllerDelegate?
     
@@ -83,7 +84,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageURLString =          "https://maps.googleapis.com/maps/api/place/photo?maxwidth=\(food?.photos?[0].width ?? 0 )&photoreference=\(food?.photos?[0].photo_reference ?? "")&key=AIzaSyBHs8w833vy7PhGWU6ECzgljQcgqBAsjC4"
+        let imageURLString =          "https://maps.googleapis.com/maps/api/place/photo?maxwidth=\(food?.photos?[0].width ?? 0 )&photoreference=\(food?.photos?[0].photo_reference ?? "")&key=\( apiKey)"
             
         
         let url = URL(string: imageURLString )

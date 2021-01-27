@@ -14,6 +14,7 @@ class FoodTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var foodList2:String = ""
+    var apiKey = ""
     
     //gives us the number of results
     var foodList = [FoodDetail](){
@@ -53,7 +54,7 @@ class FoodTableViewController: UITableViewController {
         
         let food = foodList[indexPath.row]
 
-        let imageURLString =          "https://maps.googleapis.com/maps/api/place/photo?maxwidth=\(food.photos?[0].width ?? 0 )&photoreference=\(food.photos?[0].photo_reference ?? "")&key=AIzaSyBHs8w833vy7PhGWU6ECzgljQcgqBAsjC4"
+        let imageURLString =          "https://maps.googleapis.com/maps/api/place/photo?maxwidth=\(food.photos?[0].width ?? 0 )&photoreference=\(food.photos?[0].photo_reference ?? "")&key=\(apiKey)"
             
         
         let url = URL(string: imageURLString )

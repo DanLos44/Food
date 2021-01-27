@@ -45,7 +45,7 @@ struct FoodRequest {
 
 struct FoodRequestWithPhone {
     let url:URL
-    let apiKey = "AIzaSyBHs8w833vy7PhGWU6ECzgljQcgqBAsjC4"
+    let apiKey = ""
     
     init(placeID:String) {
         
